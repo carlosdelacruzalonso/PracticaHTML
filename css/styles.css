@@ -1,0 +1,164 @@
+:root {
+    --azul-primario: #4169E1;      
+    --azul-oscuro: #1E3A8A;        
+    --azul-claro: #60A5FA;        
+    --gris-fondo: #E5E7EB;   
+    --gris-oscuro: #9CA3AF;       
+    --gris-borde: #6B7280;   
+    --blanco: #ffffff;
+    --negro: #000000;
+    --verde-ok: #10B981;          
+    --rojo-error: #EF4444;         
+    --amarillo-warning: #F59E0B;   
+    --naranja-accent: #F97316;    
+    --rosa-accent: #EC4899;  
+    --purpura-accent: #8B5CF6;    
+    --turquesa-accent: #06B6D4;  
+    --lime-accent: #65A30D; 
+
+    --gradiente-azul: linear-gradient(to bottom, #60A5FA, #3B82F6, #1D4ED8);
+    --gradiente-gris: linear-gradient(to bottom, #F9FAFB, #E5E7EB, #D1D5DB);
+    --gradiente-boton: linear-gradient(to bottom, #FFFFFF, #F3F4F6, #E5E7EB);
+    --gradiente-hover: linear-gradient(to bottom, #DBEAFE, #93C5FD, #60A5FA);
+    --gradiente-activo: linear-gradient(to bottom, #1E40AF, #3B82F6, #60A5FA);
+    --gradiente-verde: linear-gradient(to bottom, #6EE7B7, #10B981, #059669);
+    --gradiente-rosa: linear-gradient(to bottom, #F9A8D4, #EC4899, #DB2777);
+    --gradiente-purpura: linear-gradient(to bottom, #C4B5FD, #8B5CF6, #7C3AED);
+
+    --sombra-ventana: 4px 4px 15px rgba(59, 130, 246, 0.3);
+    --sombra-boton: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    --sombra-hundido: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
+    --sombra-glow-azul: 0 0 10px rgba(59, 130, 246, 0.5);
+    --sombra-glow-verde: 0 0 10px rgba(16, 185, 129, 0.5);
+    --sombra-glow-rosa: 0 0 10px rgba(236, 72, 153, 0.5);
+    
+    --fuente-sistema: 'Tahoma', 'MS Sans Serif', sans-serif;
+    --fuente-mono: 'Courier New', monospace;
+    
+    --tamaño-pequeño: 11px;
+    --tamaño-normal: 13px;
+    --tamaño-grande: 16px;
+    --tamaño-titulo: 20px;
+    
+    --espacio-xs: 4px;
+    --espacio-sm: 8px;
+    --espacio-md: 12px;
+    --espacio-lg: 16px;
+    --espacio-xl: 24px;
+}
+
+body {
+    font-family: var(--fuente-sistema);
+    font-size: var(--tamaño-normal);
+    background: var(--gris-fondo);
+    color: var(--negro);
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gris-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-window {
+    background: var(--blanco);
+    border: 2px outset var(--gris-oscuro);
+    border-radius: 0;
+    width: 450px;
+    box-shadow: var(--sombra-ventana);
+}
+
+.window-header {
+    background: var(--gradiente-azul);
+    color: var(--blanco);
+    padding: var(--espacio-xs) var(--espacio-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: var(--tamaño-pequeño);
+    box-shadow: var(--sombra-glow-azul);
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-xs);
+}
+
+.window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.control {
+    width: 16px;
+    height: 14px;
+    border: 1px outset var(--gris-oscuro);
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.control.minimize { background: var(--gradiente-gris); }
+.control.maximize { background: var(--gradiente-gris); }
+.control.close { background: linear-gradient(to bottom, #ff8080, #ff4040); }
+
+.window-content {
+    padding: var(--espacio-lg);
+}
+
+.loading-info {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-md);
+    margin-bottom: var(--espacio-lg);
+}
+
+.loading-icon {
+    font-size: 32px;
+}
+
+.loading-text div {
+    margin-bottom: var(--espacio-xs);
+    color: var(--negro);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-sm);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 20px;
+    border: 2px inset var(--gris-oscuro);
+    background: var(--blanco);
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradiente-azul);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-weight: bold;
+    min-width: 35px;
+    text-align: right;
+}

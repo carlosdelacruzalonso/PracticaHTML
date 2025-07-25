@@ -80,7 +80,35 @@
     <footer class="">
     </footer>
 
+    <div class="dialog cookie-dialog" id="cookieDialog">
+        <div class="dialog-header">
+            <div class="dialog-title">🍪 Configuración de Cookies</div>
+            <button class="dialog-close" onclick="hideCookieDialog()">✕</button>
+        </div>
+        <div class="dialog-content">
+            <div class="dialog-icon">🍪</div>
+            <div class="dialog-message">
+                <p>Este sitio web utiliza cookies técnicas para mejorar tu experiencia de navegación y analizar el uso del sitio.</p>
+                <div class="cookie-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked disabled>
+                        <span class="checkmark"></span>
+                        Cookies esenciales (requeridas)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="analyticsCheck">
+                        <span class="checkmark"></span>
+                        Cookies de análisis (opcionales)
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="dialog-footer">
+            <button onclick="acceptCookies()" class="action-button primary">Aceptar</button>
+            <button onclick="declineCookies()" class="action-button secondary">Solo esenciales</button>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="./javascript/script.js"></script>
 </body>
 </html>
