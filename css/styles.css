@@ -162,3 +162,103 @@ body {
     min-width: 35px;
     text-align: right;
 }
+
+.taskbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background: var(--gradiente-gris);
+    border-bottom: 1px solid var(--gris-borde);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.taskbar-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--espacio-sm);
+    gap: var(--espacio-sm);
+}
+
+.start-button {
+    background: var(--gradiente-boton);
+    border: 1px outset var(--gris-oscuro);
+    padding: var(--espacio-xs) var(--espacio-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-xs);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: var(--tamaño-pequeño);
+}
+
+.start-button:hover {
+    background: var(--gradiente-hover);
+}
+
+.start-button:active {
+    border: 1px inset var(--gris-oscuro);
+}
+
+.navigation {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2px;
+}
+
+.nav-button {
+    background: var(--gradiente-boton);
+    border: 1px outset var(--gris-oscuro);
+    padding: var(--espacio-xs) var(--espacio-md);
+    text-decoration: none;
+    color: var(--negro);
+    font-size: var(--tamaño-pequeño);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background: var(--gradiente-hover);
+}
+
+.nav-button:active,
+.nav-button.active {
+    border: 1px inset var(--gris-oscuro);
+    background: var(--gradiente-activo);
+    color: var(--blanco);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: var(--gradiente-boton);
+    border: 1px outset var(--gris-oscuro);
+    padding: var(--espacio-xs);
+    cursor: pointer;
+    gap: 2px;
+}
+
+.menu-toggle span {
+    width: 18px;
+    height: 2px;
+    background: var(--negro);
+    transition: 0.3s;
+}
+
+.system-info {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-sm);
+    padding: var(--espacio-xs);
+    background: var(--gradiente-gris);
+    border: 1px inset var(--gris-oscuro);
+    font-size: var(--tamaño-pequeño);
+}
