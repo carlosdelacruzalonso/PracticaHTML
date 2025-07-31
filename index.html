@@ -408,9 +408,109 @@
                 </div>
             </div>
         </section>
+
+        <section id="contacto" class="window contact-window">
+            <div class="window-header">
+                <div class="window-title">Formulario de Contacto</div>
+                <div class="window-controls">
+                    <div class="control minimize"></div>
+                    <div class="control maximize"></div>
+                    <div class="control close"></div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="contact-layout">
+                    <div class="contact-form-section">
+                        <div class="form-header">
+                            <h3>📧 Nuevo Mensaje</h3>
+                            <p>Completa el formulario para enviar un mensaje directo</p>
+                        </div>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="nombre" class="form-label">Nombre completo:</label>
+                                <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre..." required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Dirección de email:</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="asunto" class="form-label">Asunto:</label>
+                                <select id="asunto" name="asunto" class="form-select">
+                                    <option value="">Selecciona un tema...</option>
+                                    <option value="proyecto">Colaboración en proyecto</option>
+                                    <option value="consultoria">Consultoría técnica</option>
+                                    <option value="empleo">Oportunidad laboral</option>
+                                    <option value="general">Consulta general</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mensaje" class="form-label">Mensaje:</label>
+                                <textarea id="mensaje" name="mensaje" class="form-textarea" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="action-button primary">📤 Enviar Mensaje</button>
+                                <button type="reset" class="action-button secondary">🗑️ Limpiar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="contact-info-section">
+                        <div class="info-panel">
+                            <h3>📞 Información de Contacto</h3>
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Email principal:</div>
+                                    <a href="mailto:carlosdelacruzalonso@gmail.com" class="contact-link">carlosdelacruzalonso@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">🌍</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Ubicación:</div>
+                                    <div class="contact-value">Madrid, España</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">⏰</div>
+                                <div class="contact-details">
+                                    <div class="contact-label">Horario de respuesta:</div>
+                                    <div class="contact-value">24-48 horas</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="availability-panel">
+                            <h3>📊 Estado de Disponibilidad</h3>
+                            <div class="availability-status">
+                                <div class="status-text">Disponible para nuevos proyectos</div>
+                            </div>
+                            <div class="response-time">
+                                <div class="response-label">Tiempo de respuesta promedio:</div>
+                                <div class="response-value">2 horas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="">
+    <footer class="status-bar">
+        <div class="status-left">
+            <span class="status-item">✅ Sistema operativo</span>
+            <span class="status-item">👤 Carlos de la Cruz</span>
+        </div>
+        <div class="status-right">
+            <button onclick="showSystemInfo()" class="status-button">ℹ️ Info del Sistema</button>
+            <a href="#" id="privacyLink" class="status-button">📋 Política de Privacidad</a>
+        </div>
     </footer>
 
     <div class="dialog cookie-dialog" id="cookieDialog">
