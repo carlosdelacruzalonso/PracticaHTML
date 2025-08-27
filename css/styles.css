@@ -382,7 +382,7 @@ code, pre, .tech-item, .stat { font-family: var(--fuente-codigo); }
         display: none;
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 0;
         width: 100%;
         background: var(--gradiente-gris);
         flex-direction: column;
@@ -401,7 +401,16 @@ code, pre, .tech-item, .stat { font-family: var(--fuente-codigo); }
         display: block;
         width: calc(100% - 32px);
     }
-    .menu-toggle { display: flex; flex-direction: column; gap: 2px; padding: 8px; }
+    .menu-toggle { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 2px; 
+        padding: 8px; 
+        margin-left: auto;
+    }
+    .navigation {
+        justify-content: flex-end;
+    }
     .window { margin: 8px; border: 1px solid var(--gris-borde); box-shadow: none; }
     .window-content { padding: 12px; }
     .welcome-layout, .cv-layout, .blog-layout, .contact-layout,

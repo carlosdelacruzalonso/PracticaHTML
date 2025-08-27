@@ -75,9 +75,22 @@ function setupNavigation() {
             }
         });
     }
+    
+    // botón inicio - menu hamburguesa
+    const startButton = document.querySelector('.start-button');
+    if (startButton) {
+        startButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log("Botón inicio pulsado - subiendo al top");
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 }
 
-// Menu hamburguesa para movil
+// menu hamburguesa para movil
 function setupMobileMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
@@ -97,7 +110,7 @@ function setupMobileMenu() {
     }
 }
 
-// Formulario de contacto
+// formulario de contacto
 function setupForm() {
     var form = document.getElementById('contactForm');
     
@@ -130,7 +143,7 @@ function setupForm() {
     }
 }
 
-// Reloj del sistema
+// reloj del sistema
 function setupClock() {
     let timeElement = document.getElementById('systemTime');
     
@@ -152,7 +165,7 @@ function setupClock() {
     }
 }
 
-// Popup de cookies (obligatorio por RGPD)
+// popup de cookies (obligatorio por RGPD)
 function showCookies() {
     const cookieDialog = document.getElementById('cookieDialog');
     
@@ -192,7 +205,7 @@ function hideCookieDialog() {
     }
 }
 
-// Easter egg: info del sistema
+// easter egg: info del sistema
 function showSystemInfo() {
     let info = 'Información del Sistema\n';
     info += '======================\n\n';
@@ -206,12 +219,12 @@ function showSystemInfo() {
     alert(info);
 }
 
-// Politica de privacidad (texto provisional)
+// politica de privacidad
 function showPrivacyPolicy(event) {
     if (event) event.preventDefault();
     
     let policy = 'POLÍTICA DE PRIVACIDAD\n\n';
-    policy += 'Este sitio web utiliza cookies técnicas necesarias.\n';
+    policy += 'Este sitio web utiliza cookies necesarias.\n';
     policy += 'No compartimos tus datos con terceros.\n';
     policy += 'Cumplimos con el RGPD y LOPD.\n\n';
     policy += 'Para más información: carlosdelacruzalonso@gmail.com';
@@ -219,7 +232,7 @@ function showPrivacyPolicy(event) {
     alert(policy);
 }
 
-// Inicializar todo cuando carga la pagina
+// inicializar todo cuando carga la pagina
 function initializeEverything() {
     console.log("Inicializando componentes...");
     
@@ -242,7 +255,7 @@ function initializeEverything() {
     }
 }
 
-// Eventos cuando carga el DOM
+// eventos cuando carga el DOM
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM cargado");
     
@@ -251,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initializeEverything, 2000);
 });
 
-// Por si acaso el DOMContentLoaded no funciona
+// por si acaso el DOMContentLoaded no funciona
 window.addEventListener('load', function() {
     console.log("Window load");
     if (!loadingStarted) {
@@ -259,7 +272,7 @@ window.addEventListener('load', function() {
     }
 });
 
-// Timeout de seguridad por si algo falla
+// timeout de seguridad por si algo falla
 setTimeout(function() {
     if (!loadingStarted) {
         console.warn("Forzando inicio de carga");
@@ -270,7 +283,7 @@ setTimeout(function() {
     }
 }, 1500);
 
-// Saltar pantalla de carga al hacer click
+// saltar pantalla de carga al hacer click
 document.addEventListener('click', function() {
     if (loadingStarted && !loadingComplete) {
         console.log("Saltando pantalla de carga");
@@ -278,7 +291,7 @@ document.addEventListener('click', function() {
     }
 });
 
-// Por si se queda colgado
+// por si se queda colgado
 setTimeout(function() {
     if (!loadingComplete) {
         console.warn("Timeout - forzando fin de carga");
@@ -288,11 +301,11 @@ setTimeout(function() {
 
 console.log("script.js cargado");
 
-// Exportar funciones al window para poder usarlas desde HTML
+// exportar funciones al window para poder usarlas desde HTML
 window.acceptCookies = acceptCookies;
 window.declineCookies = declineCookies;
 window.hideCookieDialog = hideCookieDialog;
 window.showSystemInfo = showSystemInfo;
 
-// Debug: ver que hay en localStorage
+// debug: ver que hay en localStorage
 console.log("LocalStorage actual:", localStorage);
